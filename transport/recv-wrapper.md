@@ -28,61 +28,38 @@ Identified function (Ghidra):
 
 
 
-```c
-
-int FUN\_1029a980(int param\_1, undefined4 param\_2, undefined4 param\_3, int \*param\_4)
-
+int FUN_1029a980(
+    int param_1,
+    char *param_2,
+    int param_3,
+    int *param_4)
 {
+    int iVar1;
 
-&nbsp;   int iVar1;
+    iVar1 = recv(*(SOCKET *)(param_1 + 8), param_2, param_3, 0);
+    *param_4 = iVar1;
 
-
-
-&nbsp;   iVar1 = recv(\*(undefined4 \*)(param\_1 + 8), param\_2, param\_3, 0);
-
-&nbsp;   \*param\_4 = iVar1;
-
-
-
-&nbsp;   if (iVar1 == -1) {
-
-&nbsp;       iVar1 = WSAGetLastError();
-
-&nbsp;       if (iVar1 == 0x2733) {
-
-&nbsp;           \*param\_4 = 0;
-
-&nbsp;           return 0;
-
-&nbsp;       }
-
-&nbsp;       if (iVar1 == 0x2746) {
-
-&nbsp;           \*param\_4 = 0;
-
-&nbsp;           return 1;
-
-&nbsp;       }
-
-&nbsp;   }
-
-&nbsp;   else {
-
-&nbsp;       if (iVar1 == 0) {
-
-&nbsp;           WSAGetLastError();
-
-&nbsp;           return 1;
-
-&nbsp;       }
-
-&nbsp;       iVar1 = 0;
-
-&nbsp;   }
-
-&nbsp;   return iVar1;
-
+    if (iVar1 == -1) {
+        iVar1 = WSAGetLastError();
+        if (iVar1 == 0x2733) {
+            *param_4 = 0;
+            return 0;
+        }
+        if (iVar1 == 0x2746) {
+            *param_4 = 0;
+            return 1;
+        }
+    }
+    else {
+        if (iVar1 == 0) {
+            WSAGetLastError();
+            return 1;
+        }
+        iVar1 = 0;
+    }
+    return iVar1;
 }
+
 
 
 
