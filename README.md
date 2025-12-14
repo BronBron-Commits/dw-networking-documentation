@@ -2,45 +2,51 @@
 
 
 
-This repository documents observed DeltaWorlds network behavior for
+This repository documents observed and reverse-engineered behavior of the
 
-educational, interoperability, and tooling purposes.
-
-
-
-\## Scope
-
-\- Packet formats (observed)
-
-\- Message sequencing
-
-\- Object lifecycle data
-
-\- Version differences
+DeltaWorlds native client networking stack.
 
 
 
-\## Out of Scope
+Scope includes:
 
-\- Client code
+\- Transport behavior (Winsock usage)
 
-\- Exploitation
+\- Packet framing and dispatch
 
-\- Automation tooling
+\- World and object replication
 
-
-
-\## Methodology
-
-All observations are captured in controlled environments and documented
-
-with reproducible steps.
+\- Protocol observations derived from client reverse-engineering
 
 
 
-\## Status
+This repository does NOT contain:
 
-Early-stage documentation. Information may be incomplete or evolving.
+\- Client source code
+
+\- Decompiled binaries
+
+\- Proprietary assets
+
+
+
+All documentation is derived from behavioral analysis and static inspection.
+
+
+
+\## Repository Structure
+
+
+
+\- methodology/  — RE approach and guiding principles
+
+\- protocols/   — Protocol structure and opcodes
+
+\- transport/   — Socket behavior and data flow
+
+\- flows/       — High-level sequence diagrams
+
+\- packets/     — Observed packet structures
 
 
 
